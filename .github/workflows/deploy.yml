@@ -9,6 +9,11 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Grants write permission for repository content (needed for pushing)
+      pages: write    # Grants write permission to GitHub Pages (essential for gh-pages deployments)
+      id-token: write
     
     steps:
     - name: Checkout
